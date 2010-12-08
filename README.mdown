@@ -4,7 +4,7 @@ Navigationbar iOS style
 Implements a navigationbar similiar to the one in iOS. This basic
 implementation is poorly styled. But it works.
 
-Makes use of the History API to enable back button. Forward button 
+Makes use of the History API to enable back button. Forward button
 intentionally left out since that's not how it works on the iPhone.
 
 *Works in WebKit only*
@@ -32,6 +32,43 @@ Using links in your documents is as simple as giving the links the class
 
    `<a href="page/to/load.html" class="navbar-link">Push page</a>`
 
+## Manipulating title, backbutton and utility button
+A loaded page (or anyone) can manipulate the title, backbutton text and a
+special utility button.
+
+To call those functions from a loaded page just do this in your loaded HTML:
+
+    <script>
+      navigationbar.setTitle('Title of loaded page');
+    </script>
+
+All of those take a second argument which is a bool, if true it will animate
+the change.
+
+### Modifying title
+Changing the title is as easy as calling
+
+   `navigationbar.setTitle('new title');`
+
+### Modifying the back button text
+The back button text is set on the _current_ page. That means that the back
+button text only will be displayed when the page that set it is the second
+from the top on the navigation stack.
+
+If no custom back button title is set the title is used instead.
+
+
+### Creating a utility button
+Add a utility button by calling:
+
+    navigationbar.setUtilityButton(
+      { type: text || image           // Text to show or URL to image
+      , value: text || url to image   // Optional. Defaults to text
+      , class: text || ''             // Optional. Sets a class on the button
+      }
+    , animated                        // True animates button change
+    , callback                        // A function thath's called when button is clicked
+    );
 
 # Notes
 This is an early version and are probably riddled with bugs. Contributing will
@@ -41,3 +78,7 @@ The navigationbar will load the new page using AJAX. A loading indicator is in
 the code, but I deemed it useless, feel free to uncomment the beforeSend
 property of the AJAX-call in pushPage() if you want to use it. Graphics are
 dead ugly at the moment.
+
+99.9% of the animation is done by changing the class on the element in question
+and using CSS transitions. Override the navigationbar.css to define your own
+transitions.
