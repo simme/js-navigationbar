@@ -1,0 +1,150 @@
+.navbar-wrapper {
+  position: absolute;
+  }
+
+#navbar {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#bfbfbf), to(#eee));;
+  border-bottom: 1px solid #aaa;
+  height: 43px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  }
+
+  .navbar-title {
+    color: #1a1a1e;
+    font: bold 22px/43px Helvetica, Arial, sans-serif;
+    position: absolute;
+    text-align: center;
+    text-shadow: 1px 1px 0 #fff;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    }
+
+  .navbar-back {
+    position: absolute;
+    z-index: 1;
+    }
+
+/**
+ * Loader
+ */
+.navbar-loader {
+  background: rgba(0, 0, 0, 0.4) url('loader.gif') center center no-repeat;
+  color: #efefef;
+  height: 40px;
+  margin: 40% auto 0 auto;
+  padding: 80px 0 0 0;
+  text-align: center;
+  width: 120px;
+  -webkit-border-radius: 10px;
+  }
+
+/**
+ * Page styles
+ */
+#navbar-container {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 44px;
+  }
+
+   /* Old pages, stacked to the left of the screen */
+  #navbar-container li {
+    background: #999;
+    height: 100%;
+    left: -100%;
+    position: absolute;
+    width: 100%;
+    }
+
+  /* The currently active page, centered on screen */
+  #navbar-container li.navbar-active-page {
+    left: 0;
+    }
+
+  /* A new, loading page, positioned to the right of the screen */
+  #navbar-container li.navbar-new-page {
+    left: 100%;
+    }
+
+/**
+ * Animation properties
+ */
+.navbar-animated {
+  -webkit-transition: all .4s ease-out;
+  }
+
+
+/**
+ * Buttons inspired by: CSS3 buttons on GitHub..
+ */
+button.navbar-back-new {
+  position: absolute;
+  left: -100%;
+  }
+
+button.navbar-back {
+  position: absolute;
+  left: 0;
+  }
+
+button.navbar-back,
+button.navbar-back-new {
+  background: #e3e3e3;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 10px "helvetica neue", helvetica, arial, sans-serif;
+  line-height: 1;
+  margin: 7px 0 0 5px;
+  padding: 8px 5px 9px 15px;
+  text-align: center;
+  text-shadow: 0 1px 0px #fff;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+
+}
+
+button.navbar-back:active {
+  background: #aaa;
+  -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  box-shadow: inset 0 0 1px 1px #e3e3e3;
+  color: #000;
+}
+
+button.navbar-utility-new { opacity: 0; }
+
+button.navbar-utility,
+button.navbar-utility-new {
+  background: #e3e3e3;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 10px "helvetica neue", helvetica, arial, sans-serif;
+  line-height: 1;
+  margin: 7px 5px 0 0;
+  padding: 8px 5px 9px 5px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-shadow: 0 1px 0px #fff;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+
+}
+
+button.navbar-utility:active {
+  background: #aaa;
+  -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  box-shadow: inset 0 0 1px 1px #e3e3e3;
+  color: #000;
+}

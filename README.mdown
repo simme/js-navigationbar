@@ -1,0 +1,43 @@
+Navigationbar iOS style
+-----------------------
+
+Implements a navigationbar similiar to the one in iOS. This basic
+implementation is poorly styled. But it works.
+
+Makes use of the History API to enable back button. Forward button 
+intentionally left out since that's not how it works on the iPhone.
+
+*Works in WebKit only*
+
+# Usage
+## Initializing
+Include the javascript and css files. Init the navigation bar by calling:
+
+   `navigationbar.init('selector to container');`
+
+The navigation bar will empty and use the entire container it's given. If no
+default container is supplied it will use 'body'.
+
+## Pushing a new page onto the stack
+There are two ways to push a new page onto the stack. Either by using links
+or directly calling the navigation bar.
+
+   `// Pushing programmatically`
+   `navigationbar.pushPage('url to page', bool-animate);`
+   `// Passing true as the second argument will animate the new page into place`
+   `// Passing false will put it there as soon as it's loaded`
+
+Using links in your documents is as simple as giving the links the class
+*navbar-link*.
+
+   `<a href="page/to/load.html" class="navbar-link">Push page</a>`
+
+
+# Notes
+This is an early version and are probably riddled with bugs. Contributing will
+give you gold stars 'n stuff.
+
+The navigationbar will load the new page using AJAX. A loading indicator is in
+the code, but I deemed it useless, feel free to uncomment the beforeSend
+property of the AJAX-call in pushPage() if you want to use it. Graphics are
+dead ugly at the moment.
