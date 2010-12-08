@@ -22,10 +22,10 @@ default container is supplied it will use 'body'.
 There are two ways to push a new page onto the stack. Either by using links
 or directly calling the navigation bar.
 
-`// Pushing programmatically
-navigationbar.pushPage('url to page', bool-animate);
-// Passing true as the second argument will animate the new page into place
-// Passing false will put it there as soon as it's loaded`
+    // Pushing programmatically
+    navigationbar.pushPage('url to page', bool-animate);
+    // Passing true as the second argument will animate the new page into place
+    // Passing false will put it there as soon as it's loaded`
 
 Using links in your documents is as simple as giving the links the class
 *navbar-link*.
