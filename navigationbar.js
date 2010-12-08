@@ -231,6 +231,10 @@ var navigationbar = (function ($) {
       $('<button class="navbar-utility-new" />').text(value)
         .appendTo('.navbar-right-placeholder');
 
+      if (aClass) {
+        $('.navbar-utility-navbar').addClass(aClass);
+      }
+
       if (typeof callback == 'function') {
         $('.navbar-utility-new').click(function () {
           callback();
