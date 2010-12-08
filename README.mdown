@@ -57,6 +57,8 @@ from the top on the navigation stack.
 
 If no custom back button title is set the title is used instead.
 
+   `navigationbar.setBackButton('new title');`
+
 
 ### Creating a utility button
 Add a utility button by calling:
@@ -69,6 +71,9 @@ Add a utility button by calling:
     , animated                        // True animates button change
     , callback                        // A function thath's called when button is clicked
     );
+
+Calling *setUtilityButton* with false as the first and only argument will
+remove the current button.
 
 # Notes
 This is an early version and are probably riddled with bugs. Contributing will
